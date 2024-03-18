@@ -1,13 +1,15 @@
 async function searchNews() {
-    const apiKey = '159169b7970549b082187135ea3cb068'; 
+    const apiKey = '159169b7970549b082187135ea3cb068';
     const query = document.getElementById('searchInput').value;
-    const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`;
+    const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
+    const apiUrl = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`;
+    const url = corsAnywhereUrl + apiUrl;
 
     try {
         const response = await fetch(url);
         const data = await response.json();
 
-        if (data.articles.length > 0) {
+        if (data.articles && data.articles.length > 0) {
             const newsResults = document.getElementById('newsResults');
             newsResults.innerHTML = '';
 
