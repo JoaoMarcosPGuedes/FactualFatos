@@ -1,5 +1,5 @@
 async function searchNews() {
-    const apiKey = 'YOUR_API_KEY'; // Insira sua chave de API do NewsAPI.org aqui
+    const apiKey = '159169b7970549b082187135ea3cb068'; 
     const query = document.getElementById('searchInput').value;
     const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`;
 
